@@ -1,0 +1,268 @@
+@import url(../fonts/stylesheet.css);
+body {
+    font-family: "Montserrat";
+}
+
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.question {
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.progress {
+    margin: 20px 0;
+    position: relative;
+    height: 12px;
+    background-color: #f3f3f3;
+    border-radius: 99px;
+}
+#answer-container {
+    padding: 10px;
+}
+
+
+.test input[type="radio"] {
+    display: none; 
+}
+
+
+.test label {
+    position: relative;
+    cursor: pointer; /* Указатель на кнопки */
+    padding-left: 40px; /* Отступ для кружка */
+    padding-top: 10px; /* Отступ сверху */
+    padding-bottom: 10px; /* Отступ снизу */
+    display: block; /* Сделаем label блочным элементом для получения нужной высоты */
+}
+
+/* Создание кастомного кружка при помощи псевдоэлемента */
+.test label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Центрирование по вертикали */
+    width: 17px; /* Размер кружка */
+    height: 17px; /* Размер кружка */
+    border: 2px solid #000000; /* Цвет рамки кружка */
+    border-radius: 50%; /* Округляем кружок */
+    background-color: transparent; /* Фоновый цвет кружка */
+    transition: background-color 0.5s linear, border-color 0.5s linear;
+}
+
+.test label:hover::before {
+    background-color: #3300FF; /* Цвет выбранного кружка */
+    border-color: #3300FF;
+}
+
+/* Изменяем цвет кружка при выборе */
+.test input[type="radio"]:checked + label::before {
+    background-color: #3300FF; /* Цвет выбранного кружка */
+    border-color: #3300FF; /* Цвет рамки выбранного кружка */
+}
+
+/* Стили для текста метки */
+.test label {
+    color: #333; /* Цвет текста для метки */
+}
+#progress-bar {
+    height: 100%;
+    position: absolute;
+    background-color: #3300FF; /* Зелёный цвет */
+    width: 0; /* Начинаем с 0% */
+    border-radius: 10px;
+    transition: width 1s ease; /* Анимация при изменении ширины */
+}
+.progress__slide {
+    display: flex;
+    margin-top: 20px;
+    width: 99.5%;
+    justify-content: space-between;
+}
+.progress__slide p {
+    margin: 0;
+}
+.progress {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+#progress-text {
+    position: absolute;
+    right: -5px;
+    bottom: -20px;
+    font-size: 14px;
+}
+.back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.test {  
+    display: none;
+ 
+}
+.container {
+    margin: 82px 0;
+    max-width: 873px;
+    width: 100%;
+}
+.test__button.disabled {
+    opacity: 0.5; 
+    pointer-events: none; 
+}
+.test.active {
+    display: block;
+}
+.answer {
+    display: none;
+}
+.answer.active {
+    display: block;
+}
+.answer h2 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 58.51px;
+    text-align: left;
+    margin: 0 0 13px;
+    
+}
+.answer p {
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 33.6px;
+    text-align: left;
+    margin: 0;
+    
+}
+.answer .answer__title {
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24.38px;
+    text-align: left;
+    margin: 0 0 15px;
+    
+}
+.answer .answer__text {
+ 
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22.4px;
+    text-align: left;
+   margin: 0;
+    
+}
+
+.answer__block {
+    padding: 40px;
+    border-radius: 20px;
+    background-color: #E5F5E1;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+.answer__block:first-of-type {
+    margin-top: 38px;
+}
+.answer__block.incorrect {
+    background-color: #FFE0E0;
+}
+.answer__button.active {
+    display: block;
+}
+.answer__button {
+    background-color: #3300FF;
+    border: none;
+    display: none;
+    transition:opacity 0.3s linear;
+
+font-size: 18px;
+font-weight: 700;
+line-height: 21.94px;
+text-align: left;
+border-radius: 10px;
+margin: 40px auto 0;
+padding: 18px 31px;
+color: #fff;
+}
+.answer__button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.test__block {
+    padding: 23px;
+    box-sizing: border-box;
+    min-height: 528px;
+    border-radius: 20px;
+    background-color: #F7F7F7;
+}
+.test__title {
+ 
+font-size: 48px;
+font-weight: 800;
+line-height: 58.51px;
+text-align: left;
+margin: 0 0 20px;
+}
+.question {
+
+font-size: 24px;
+font-weight: 700;
+line-height: 29.26px;
+text-align: left;
+margin: 0 0 10px;
+
+}
+.test__answer {
+
+font-size: 16px;
+font-weight: 400;
+line-height: 19.5px;
+text-align: left;
+margin-bottom: 5px;
+
+}
+@media (max-width:1000px) {
+    .test__title {
+        font-size: 30px;
+    }
+    .question {
+        font-size: 20px;
+    }
+    .container {
+        max-width: 90%;
+        width: 100%;
+    }
+    .test__answer {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+    .test label::before {
+        width: 12px;
+        height: 12px;
+    }
+    .test label {
+        padding-left: 30px;
+    }
+    .answer h2 {
+        font-size: 30px;
+    }
+    .answer p {
+        font-size: 18px;
+        line-height: normal;
+    }
+    .answer__block:first-of-type {
+        margin-top: 25px;
+    }
+}
