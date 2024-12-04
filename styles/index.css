@@ -265,4 +265,8 @@ margin-bottom: 5px;
     .answer__block:first-of-type {
         margin-top: 25px;
     }
+    .test label:hover::before {
+        background-color: none; /* Цвет выбранного кружка */
+        border-color: #000000;
+    }
 }
