@@ -90,6 +90,7 @@ button {
 }
 .progress__slide p {
     margin: 0;
+    font-weight: 700;
 }
 .progress {
     margin-top: 5px;
